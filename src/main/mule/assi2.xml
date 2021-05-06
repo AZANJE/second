@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config3" doc:name="HTTP Listener config" doc:id="ef3287cd-b710-4bd6-98a9-f2c134554098" >
+		<http:listener-connection host="0.0.0.0" port="8082" />
+	</http:listener-config>
+	<flow name="assi2Flow" doc:id="85bc5978-2e3a-4ba5-ba82-1f5d3a57991b" >
+		<http:listener doc:name="Listener" doc:id="3f65b5de-86a1-4478-9443-312d914077e9" config-ref="HTTP_Listener_config3" path="/Training" allowedMethods="GET,POST"/>
+		<logger level="INFO" doc:name="Logger" doc:id="dbd834ae-4d50-4ad5-b5b6-c822fb4c86dd" message="Ajay"/>
+		<set-variable value="Ajay" doc:name="Set Variable" doc:id="a48f29f6-089a-4871-a497-95dd1cb783be" variableName="Firstname"/>
+		<logger level="INFO" doc:name="Logger" doc:id="7c0edcfe-586c-49f2-9f8e-52e0a7aaa340" />
+		<set-variable value="Zanje" doc:name="Set Variable" doc:id="9b5e3594-18a3-4161-ba58-377470a8c274" variableName="Lastname"/>
+		<set-payload value='#["My name is" ++ vars.Firstname ++ " " ++ vars.Lastname]' doc:name="Set Payload" doc:id="d123cd04-b5a2-40e0-9eed-630cf11ff858" />
+	</flow>
+</mule>
