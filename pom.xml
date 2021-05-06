@@ -41,7 +41,7 @@
 				<password>A1j2a3y4</password>
 				<!-- Environment Parameter -->
 				<environment>Sandbox</environment>
-				<applicationName>mulesoft12345</applicationName>
+				<applicationName>mulesoft123</applicationName>
 				<workerType>MICRO</workerType>
 			</cloudHubDeployment>
 				</configuration>
